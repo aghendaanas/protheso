@@ -1,0 +1,135 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: transparent;
+    font-family: 'poppins', sans-serif;
+    flex-wrap: nowrap; /* Ensure items don't wrap */
+    background-color: white;
+    
+}
+
+.left-side,
+.right-side {
+    flex: 1; /* Adjusts to fit available space */
+    display: flex;
+    align-items: center;
+}
+
+.left-side {
+    justify-content: flex-start;
+}
+
+.right-side {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.logo {
+    flex: 3; /* Takes up more space */
+    text-align: center;
+}
+
+.logo img {
+    max-width: 60px; /* Adjust size as needed */
+    height: auto;
+}
+
+.nav-btn {
+    margin-right: 15px;
+    padding: 10px 15px;
+    color: #0f3061;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: white;
+}
+
+.nav-btn:hover {
+    color: #2faab3;
+    background-color: white;
+}
+
+.contact-info p,
+.right-side p {
+    margin: 5px 0;
+  
+}
+
+.appointment-btn {
+    padding: 5px 10px;
+    color: #0f3061;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+    background-color: white;
+}
+
+.appointment-btn:hover {
+    color: #2faab3;
+    background-color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        overflow-x: auto; /* Allows horizontal scrolling if necessary */
+    }
+
+    .left-side,
+    .right-side {
+        flex: 1; /* Ensures equal spacing */
+    }
+
+    .logo {
+        flex: 2; /* Ensures it remains centered */
+    }
+
+    .nav-btn {
+        margin-right: 15px; /* Adjust for better spacing */
+    }
+
+    .appointment-btn {
+        margin-left: 15px; /* Adjust for better spacing */
+    }
+}
+
+
+
+
+
+.scrolling-text {
+    width: 100%;
+    background-color: #0f3061; /* Adjust color as needed */
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-size: 12px;
+}
+
+.scrolling-text p {
+    display: inline-block;
+    padding: 10px 0;
+    margin: 0;
+    white-space: nowrap;
+    will-change: transform;
+    animation: scroll-left 100s linear infinite;
+}
+
+.scrolling-text span {
+    margin-right: 30px;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0); /* Start from the right edge */
+    }
+    100% {
+        transform: translateX(-100%); /* End at the left edge */
+    }
+}

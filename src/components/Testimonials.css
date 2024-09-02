@@ -1,0 +1,80 @@
+/* src/components/HomeService.css */
+.home-service {
+    padding: 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.home-service-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.home-service h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.home-service-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-block {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    text-align: center;
+}
+
+.service-icon {
+    color: #0f3061;
+    margin-bottom: 15px;
+}
+
+.service-block h3 {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-block p {
+    font-size: 0.8em;
+    color: #666;
+    line-height: 1.5;
+}
+
+.consulta-btn {
+    margin-top: 0.2rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: #0f3061;
+    border: 2px solid #0f3061; /* Added border */
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+
+.text01 {
+    font-family: "Noto Kufi Arabic", sans-serif;
+    
+    text-align: right;
+    font-size: 12px;
+    background-color: #0f3061;
+    color: white;
+    font-weight: 400;
+    padding: 10px;
+    border-radius: 8px;
+    direction: rtl;
+
+  }

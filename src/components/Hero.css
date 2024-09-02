@@ -1,0 +1,80 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: url('../assets/hero.png') no-repeat center center ; 
+    background-size: cover;
+    min-height: 45vh; /* Ensure the section takes full viewport height */
+    color: #ffffff; /* Make text visible against the background */
+    text-align: center;
+    position: relative;
+    font-family: "poppins";
+}
+
+.hero-text {
+    max-width: 95%;
+}
+
+.hero-text h1 {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.hero-text p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.consult-btn {
+    margin-top: 0.2rem;
+    padding: 0.5rem 1rem;
+    background-color: #0f3061;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "poppins";
+    margin: 0 5px; /* Adjust the value as needed for spacing */
+}
+
+.consult-btn:hover {
+    background-color: #ffffff;
+    color: #0f3061;
+}
+
+.social-media {
+    position: absolute;
+    bottom: 2rem;
+    margin-top: 10px;
+}
+
+.social-media a {
+    margin: 0 0.5rem;
+    color: #0f3061;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 100%) {
+    .hero {
+        padding: 1.5rem;
+        min-height: 40vh; /* Adjust height on smaller screens */
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .social-media {
+        position: static;
+        margin-top: 1.5rem;
+    }
+}

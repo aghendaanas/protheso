@@ -1,0 +1,180 @@
+.offers {
+    padding: 5px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.offers h2 {
+    font-size: 2rem;
+   
+}
+
+.offers-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-width: 90%;
+    padding: 10px; /* Added padding for better spacing */
+}
+
+
+.nav-button {
+    background-color: transparent;
+    color: #0f3061;
+    border: none;
+    width: 40px; /* Make the width and height equal for a perfect circle */
+    height: 40px;
+    font-size: 2rem;
+    font-weight: 800;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-button:hover {
+    background-color: transparent;
+    color: #afaeae;
+}
+
+
+
+.offer {
+    max-width: 90%;
+    background-color: #fff;
+    padding: 15px; /* Slightly increased padding */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for more depth */
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    font-family: "Poppins";
+}
+
+.offer img {
+    max-width: 50%;
+    
+    
+}
+
+.offer h3 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #0f3061;
+}
+
+.offer p {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+}
+
+
+.button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Added subtle lift effect */
+}
+
+/* Sliding animation */
+.slide-next {
+    animation: slide-next 0.3s ease-in-out forwards;
+}
+
+.slide-prev {
+    animation: slide-prev 0.3s ease-in-out forwards;
+}
+
+@keyframes slide-next {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-prev {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-next {
+    animation: slide-next 0.3s ease-in-out forwards;
+}
+
+.slide-prev {
+    animation: slide-prev 0.3s ease-in-out forwards;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .offer {
+        max-width: 100%;
+    }
+}
+
+.consulta-btn {
+    margin-top: 0.2rem;
+    padding: 0.5rem 1rem;
+    background-color: #ffffff;
+    color: #0f3061;
+    border: 2px solid #0f3061; /* Added border */
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+
+.consult-btn:hover {
+    background-color: #ffffff;
+    color: #0f3061;
+}
+
+.consultana-btn {
+    margin-top: 0.2rem;
+    padding: 0.5rem 1rem;
+    background-color: #0f3061;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "poppins";
+    font-size: 12px;
+    margin-bottom: 15px;
+    
+}
+
+
+
+.arabic-text {
+    font-family: "Noto Kufi Arabic", sans-serif;
+}
