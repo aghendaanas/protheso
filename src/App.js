@@ -24,7 +24,7 @@ function App() {
             <div className="App">
                 <Header />
                 <Routes>
-                    <Route path="/" element={<><Hero /><SpeedInsights /><AdBanner /><Offers /><Testimonials /></>} />
+                    <Route path="/" element={<><Hero /><SpeedInsights /><AdBanner /><Offers /><AdBanner /><Testimonials /></>} />
                     <Route path="/offer/:offerId" element={<OfferDetail />} />
                     <Route path="/about-us" element={<AboutUs />} />
                     <Route path="/contact" element={<ContactForm />} />

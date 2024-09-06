@@ -14,8 +14,8 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    min-width: 90%;
-    padding: 10px; /* Added padding for better spacing */
+    min-width: 95%;
+    padding: 8px; /* Added padding for better spacing */
 }
 
 
@@ -43,7 +43,7 @@
 
 
 .offer {
-    max-width: 90%;
+    max-width: 95%;
     background-color: #fff;
     padding: 15px; /* Slightly increased padding */
     border: 1px solid #ddd;
@@ -56,7 +56,7 @@
 }
 
 .offer img {
-    max-width: 50%;
+    max-width: 55%;
     
     
 }
