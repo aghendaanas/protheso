@@ -8,8 +8,21 @@
 }
 
 .ad-image {
-    max-width: 90%;
+    max-width: 95%;
     height: auto;
     border-radius: 10px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+/* Media query for tablets and smaller screens */
+@media (max-width: 768px) {
+    .ad-image {
+        max-width: 90%; /* Adjust as needed for tablets */
+    }
+}
+
+/* Media query for larger screens (desktops) */
+@media (min-width: 769px) {
+    .ad-image {
+        max-width: 60%; /* Adjust as needed for desktops */
+    }
 }
