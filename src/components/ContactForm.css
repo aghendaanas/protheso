@@ -9,6 +9,11 @@
  
 }
 
+.arabic-text {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl; /* For right-to-left text alignment */
+}
+
 /* Form heading */
 .contact-form h2 {
     margin-bottom: 20px;
