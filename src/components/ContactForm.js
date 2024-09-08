@@ -63,7 +63,7 @@ const ContactForm = () => {
             // Check if response is OK
             if (!response.ok) {
                 const errorText = await response.text(); // Read response as text
-                throw new Error(errorText);
+                throw new Error(`Server error: ${errorText}`);
             }
     
             // Try to parse the response as JSON

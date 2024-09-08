@@ -16,7 +16,7 @@ export default async function handler(req, res) {
             res.status(200).json({ success: true });
         } catch (error) {
             console.error('Database connection or operation failed:', error);
-            res.status(500).json({ error: 'Failed to submit data' });
+            res.status(500).json({ error: 'Failed to submit data', details: error.message });
         }
     } else {
         res.status(405).json({ error: 'Method not allowed' });
