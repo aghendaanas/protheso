@@ -11,13 +11,19 @@ const SubmissionsPage = () => {
     const [submissions, setSubmissions] = useState([]);
 
     useEffect(() => {
-        const fetchSubmissions = () => {
-            const data = JSON.parse(localStorage.getItem('submissions')) || [];
+        const fetchSubmissions = async () => {
+          try {
+            const response = await fetch('/api/submissions');
+            const data = await response.json();
             setSubmissions(data);
+          } catch (error) {
+            console.log('Error fetching submissions:', error);
+          }
         };
-
+      
         fetchSubmissions();
-    }, []);
+      }, []);
+      
 
     const handleDelete = (index) => {
         const updatedSubmissions = submissions.filter((_, i) => i !== index);
