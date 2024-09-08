@@ -60,28 +60,19 @@ const ContactForm = () => {
                 body: JSON.stringify({ ...formData, submissionDate }),
             });
     
-            // Check if response is OK
             if (!response.ok) {
                 const errorText = await response.text(); // Read response as text
                 throw new Error(`Server error: ${errorText}`);
             }
     
-            // Try to parse the response as JSON
-            let result;
-            try {
-                result = await response.json();
-            } catch (jsonError) {
-                throw new Error("Response is not valid JSON");
-            }
+            const result = await response.json(); // Use the result if needed
+            console.log(result); // Example usage, adjust as necessary
     
-            // Handle result
-            console.log(result);
             setMessage("La soumission a été effectuée avec succès ! / تم إرسال النموذج بنجاح!");
         } catch (error) {
             setMessage(`Erreur : ${error.message}`);
         }
     
-        // Reset form after submission
         setFormData({
             name: '',
             dob: '',

@@ -5,6 +5,10 @@ export default async function handler(req, res) {
         const { name, dob, gender, phone, email, address, medicalConditions, allergies, medications, previousDentalWork, currentIssues, desiredTreatments, insuranceProvider, policyNumber, preferredDate, reasonForVisit, consent, privacyPolicy, howDidYouHear, specialRequests, mouthPicture, submissionDate } = req.body;
 
         try {
+            if (!process.env.MONGODB_URI) {
+                throw new Error('MongoDB URI is not defined');
+            }
+
             const client = await MongoClient.connect(process.env.MONGODB_URI);
             const db = client.db();
             const collection = db.collection('submissions');
