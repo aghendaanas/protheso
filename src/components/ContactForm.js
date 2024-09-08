@@ -49,7 +49,6 @@ const ContactForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
     
-        // Add the current date to formData
         const submissionDate = new Date().toLocaleDateString();
     
         try {
@@ -67,8 +66,16 @@ const ContactForm = () => {
                 throw new Error(errorText);
             }
     
-            // Optionally: You can check if you need to do something with the response here
-            // const result = await response.json(); // Removed if not needed
+            // Try to parse the response as JSON, handle any parsing errors
+            let result;
+            try {
+                result = await response.json();
+            } catch (jsonError) {
+                throw new Error("Response is not valid JSON");
+            }
+    
+            // Optionally handle the result if needed
+            console.log(result); // Or do something with the result
     
             setMessage("La soumission a été effectuée avec succès ! / تم إرسال النموذج بنجاح!");
         } catch (error) {
