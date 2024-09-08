@@ -1,25 +1,24 @@
+// /api/submit.js
 import { MongoClient } from 'mongodb';
 
-const uri = process.env.MONGODB_URI; // MongoDB URI from Atlas
-const client = new MongoClient(uri);
-
 export default async function handler(req, res) {
-  if (req.method === 'POST') {
-    try {
-      const data = req.body; // Form data
+    if (req.method === 'POST') {
+        const { name, dob, gender, phone, email, address, medicalConditions, allergies, medications, previousDentalWork, currentIssues, desiredTreatments, insuranceProvider, policyNumber, preferredDate, reasonForVisit, consent, privacyPolicy, howDidYouHear, specialRequests, mouthPicture, submissionDate } = req.body;
 
-      await client.connect();
-      const database = client.db('mydatabase');
-      const collection = database.collection('submissions');
+        try {
+            const client = await MongoClient.connect(process.env.MONGODB_URI);
+            const db = client.db();
+            const collection = db.collection('submissions');
 
-      const result = await collection.insertOne(data);
-      res.status(200).json({ message: 'Submission saved', result });
-    } catch (error) {
-      res.status(500).json({ error: 'Error saving submission' });
-    } finally {
-      await client.close();
+            const result = await collection.insertOne({ name, dob, gender, phone, email, address, medicalConditions, allergies, medications, previousDentalWork, currentIssues, desiredTreatments, insuranceProvider, policyNumber, preferredDate, reasonForVisit, consent, privacyPolicy, howDidYouHear, specialRequests, mouthPicture, submissionDate });
+
+            client.close();
+
+            res.status(200).json({ success: true });
+        } catch (error) {
+            res.status(500).json({ error: 'Failed to submit data' });
+        }
+    } else {
+        res.status(405).json({ error: 'Method not allowed' });
     }
-  } else {
-    res.status(405).json({ message: 'Method not allowed' });
-  }
 }

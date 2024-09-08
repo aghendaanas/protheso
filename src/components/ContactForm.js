@@ -48,27 +48,29 @@ const ContactForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+    
         // Add the current date to formData
         const submissionDate = new Date().toLocaleDateString();
-        
-        // Send form data to the serverless function
+    
         try {
             const response = await fetch('/api/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ ...formData, submissionDate }), // Add formData along with submissionDate
+                body: JSON.stringify({ ...formData, submissionDate }),
             });
-            
-            const result = await response.json();
-            
-            if (response.ok) {
-                setMessage("La soumission a été effectuée avec succès ! / تم إرسال النموذج بنجاح!");
-            } else {
-                setMessage(`Erreur : ${result.error}`);
+    
+            // Check if response is OK
+            if (!response.ok) {
+                const errorText = await response.text(); // Read response as text
+                throw new Error(errorText);
             }
+    
+            // Optionally: You can check if you need to do something with the response here
+            // const result = await response.json(); // Removed if not needed
+    
+            setMessage("La soumission a été effectuée avec succès ! / تم إرسال النموذج بنجاح!");
         } catch (error) {
             setMessage(`Erreur : ${error.message}`);
         }
@@ -98,6 +100,8 @@ const ContactForm = () => {
             mouthPicture: null,
         });
     };
+    
+    
     
     return (
         <div className="contact-form-container">
