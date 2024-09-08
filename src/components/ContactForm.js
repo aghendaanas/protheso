@@ -66,7 +66,7 @@ const ContactForm = () => {
                 throw new Error(errorText);
             }
     
-            // Try to parse the response as JSON, handle any parsing errors
+            // Try to parse the response as JSON
             let result;
             try {
                 result = await response.json();
@@ -74,9 +74,8 @@ const ContactForm = () => {
                 throw new Error("Response is not valid JSON");
             }
     
-            // Optionally handle the result if needed
-            console.log(result); // Or do something with the result
-    
+            // Handle result
+            console.log(result);
             setMessage("La soumission a été effectuée avec succès ! / تم إرسال النموذج بنجاح!");
         } catch (error) {
             setMessage(`Erreur : ${error.message}`);

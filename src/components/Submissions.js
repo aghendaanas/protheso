@@ -247,6 +247,8 @@ Pour toute question concernant ces documents ou notre politique en général, n'
             doc.save(`${submission.name}_soumission_${contractId}.pdf`);
         }
     };
+
+    
     
    
     

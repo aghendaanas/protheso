@@ -1,4 +1,3 @@
-// /api/submit.js
 import { MongoClient } from 'mongodb';
 
 export default async function handler(req, res) {
@@ -16,6 +15,7 @@ export default async function handler(req, res) {
 
             res.status(200).json({ success: true });
         } catch (error) {
+            console.error('Database connection or operation failed:', error);
             res.status(500).json({ error: 'Failed to submit data' });
         }
     } else {
